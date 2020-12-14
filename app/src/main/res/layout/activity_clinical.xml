@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClinicalActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginVertical="@dimen/Vertical_margin">
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                card_view:cardCornerRadius="@dimen/card_radius">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*"
+                    android:background="#e6e6e6"
+                    android:layout_margin="@dimen/Vertical_margin">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:text="Patient clinical info (রোগীর রোগশয্যার তথ্যাবলী)"
+                            android:layout_span="3"
+                            android:textColor="#0033cc" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Urethral discharge (মুত্রনালীর নিঃসরণ)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/urth"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/urth_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/urth_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/urth_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/urth_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/urth_type_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Urethral discharge criteria (মুত্রনালীর নিঃসরণ ধরন)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/urth_type"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/urth_type_clr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Clear (পরিষ্কার)"/>
+                            <RadioButton
+                                android:id="@+id/urth_type_purulent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Purulent (ঘন পুজের মতো স্রাব)"/>
+                            <RadioButton
+                                android:id="@+id/urth_type_muco"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mucopurulent (পুজ সদৃশ হলুদ স্রাব)"/>
+                            <RadioButton
+                                android:id="@+id/urth_type_oth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Others (অন্যান্য)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/urth_type_oth_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/urth_type_oth_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Others (অন্যান্য)" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/vagi_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Vaginal discharge (যোনিপথের নিঃসরণ)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/vagi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/vagi_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/vagi_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/vagi_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/vagi_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/vagi_amount_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Vaginal discharge amount (যোনিপথের নিঃসরণ পরিমান)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/vagi_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/vagi_amount_mild"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mild (অল্প)"/>
+                            <RadioButton
+                                android:id="@+id/vagi_amount_mod"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Moderate (মাঝারি)"/>
+                            <RadioButton
+                                android:id="@+id/vagi_amount_pro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Profuse (প্রচুর)"/>
+                        </RadioGroup>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/vagi_type_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Consistency of vaginal discharge (যোনিস্রাবের ঘনত্ব)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/vagi_type"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/vagi_type_clr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Clear (পরিষ্কার)"/>
+                            <RadioButton
+                                android:id="@+id/vagi_type_purulent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Purulent (ঘন পুজের মতো স্রাব)"/>
+                            <RadioButton
+                                android:id="@+id/vagi_type_muco"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mucopurulent (পুজ সদৃশ হলুদ স্রাব)"/>
+                            <RadioButton
+                                android:id="@+id/vagi_type_oth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Others (অন্যান্য)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/vagi_type_oth_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/vagi_type_oth_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Others (অন্যান্য)" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/vagi_smell_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Foul-smelling vaginal discharge (গন্ধযুক্ত যোনি স্রাব)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/vagi_smell"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/vagi_smell_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/vagi_smell_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/vagi_smell_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/vagi_smell_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/vagi_colour_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Color of vaginal discharge (যোনিস্রাব এর রঙ)"
+                            android:layout_gravity="center_vertical"/>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/vagi_colour_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/vagi_colour"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Colour" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/vagi_colour_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/vagi_colour_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/vagi_itch_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Vaginal itching (যোনিপথে চুলকানি)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/vagi_itch"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/vagi_itch_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/vagi_itch_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/vagi_itch_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/vagi_itch_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Oropharygenal sore/ulceration (মুখগহবর থেকে নিঃসরণ)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/oro_ulcer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/oro_ulcer_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/oro_ulcer_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/oro_ulcer_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/oro_ulcer_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Oropharyngeal discharge (মুখগহবর নিঃসরণ)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/oro_dis"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/oro_dis_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/oro_dis_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/oro_dis_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/oro_dis_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Anorectal sore/ulceration (পায়ুপথে ঘা/ক্ষত)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/ano_ulcer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/ano_ulcer_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/ano_ulcer_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ano_ulcer_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/ano_ulcer_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Annorectal discharge (পায়ুপথে থেকে নিঃসরণ)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/ano_dis"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/ano_dis_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/ano_dis_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ano_dis_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/ano_dis_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Lower abdominal pain (তলপেটে যন্ত্রনা)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/abd_pain"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/abd_pain_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/abd_pain_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/abd_pain_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/abd_pain_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Painful urination (প্রসাবে ব্যাথা বা জ্বালা)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/uri_pain"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/uri_pain_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/uri_pain_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/uri_pain_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/uri_pain_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Painful intercouse (যৌনক্রিয়ার সময় যৌনাঙ্গে যন্ত্রনা)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/pain_inter"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/pain_inter_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/pain_inter_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/pain_inter_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/pain_inter_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Genital warts (যৌনাঙ্গে আঁচিল)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/gen_war"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/gen_war_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/gen_war_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/gen_war_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/gen_war_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Genital ulcer (যৌনাঙ্গে ক্ষত)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/gen_ulcer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/gen_ulcer_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/gen_ulcer_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <LinearLayout
+                            android:id="@+id/gen_ulcer_row"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/gen_ulcer_days_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/gen_ulcer_days"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Number of days"
+                                    android:inputType="number"
+                                    android:maxLength="2"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/gen_ulcer_num_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/gen_ulcer_num"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Number of ulcer"
+                                    android:inputType="number"
+                                    android:maxLength="2"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/pain_ulcer_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Pain in ulcer (ক্ষতে ব্যাথা)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/pain_ulcer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/pain_ulcer_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/pain_ulcer_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/pain_ulcer_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/pain_ulcer_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/blis_ulcer_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Blister in ulcer (ক্ষতে ফোস্কা/ফুসকুড়ি)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/blis_ulcer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/blis_ulcer_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/blis_ulcer_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/blis_ulcer_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/blis_ulcer_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:id="@+id/dis_ulcer_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Discharge from ulcer (ক্ষত থেকে নিঃসরন)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/dis_ulcer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/dis_ulcer_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/dis_ulcer_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/dis_ulcer_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/dis_ulcer_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Swelling in the inguinal region (কুচকিতে স্ফীতভাব)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/swel_ingui"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/swel_ingui_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/swel_ingui_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/swel_ingui_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/swel_ingui_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ulceration in the inguinal(কুচকিতে ক্ষত)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/ulcer_ingui"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/ulcer_ingui_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/ulcer_ingui_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ulcer_ingui_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/ulcer_ingui_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Scrotal swelling/pain (অন্ডকোষ ফোলা)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/scro_pain"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/scro_pain_pr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Present (আছে)"/>
+                            <RadioButton
+                                android:id="@+id/scro_pain_ab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absent (নাই)"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/scro_pain_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/scro_pain_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Others (অন্যান্য)"
+                            android:layout_gravity="center_vertical"/>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/oth_name_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/oth_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Other diseases" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/clin_oth_days_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/clin_oth_days"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Number of days"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <Button
+                            android:id="@+id/submit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="submit"
+                            android:layout_span="3"
+                            style="@style/Widget.AppCompat.Button.Colored" />
+                    </TableRow>
+                </TableLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

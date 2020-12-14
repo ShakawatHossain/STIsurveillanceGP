@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DemoActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginVertical="@dimen/Vertical_margin">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:cardCornerRadius="@dimen/card_radius">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*"
+                    android:background="#e6e6e6"
+                    android:layout_margin="@dimen/Vertical_margin">
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:text="Sociodemographic information of the participant (অংশগ্রহণকারীর আর্থ-সামাজিক তথ্যাবলী)"
+                            android:layout_span="3"
+                            android:textColor="#0033cc" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Name (নাম)"
+                            android:layout_gravity="center_vertical"/>
+                        <EditText
+                            android:id="@+id/name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="name"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Age in completed years (বয়স সম্পুর্নকৃত বছরে)"
+                            android:layout_gravity="center_vertical"/>
+                        <EditText
+                            android:id="@+id/age"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="age"
+                            android:inputType="number"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Gender (লিঙ্গ)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/sex"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/male"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Male (পুরুষ)"/>
+                            <RadioButton
+                                android:id="@+id/female"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Female (মহিলা)"/>
+                            <RadioButton
+                                android:id="@+id/transgender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Transgender (হিজড়া)"/>
+                        </RadioGroup>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Present Address (বর্তমান ঠিকানা)"
+                            android:layout_gravity="center_vertical"
+                            android:layout_span="3"
+                            android:textColor="#0033cc"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Union/Ward (ইউনিয়ন/ওয়ার্ড)"
+                            android:layout_gravity="center_vertical" />
+                        <AutoCompleteTextView
+                            android:id="@+id/un"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Union name"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Upazila/Thana/Municipalty (উপজেলা/থানা/পুরসভা)"
+                            android:layout_gravity="center_vertical" />
+                        <AutoCompleteTextView
+                            android:id="@+id/up"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="2 char hint"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="District (জেলা)"
+                            android:layout_gravity="center_vertical" />
+                        <AutoCompleteTextView
+                            android:id="@+id/dis"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="2 char hint"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <CheckBox
+                            android:id="@+id/add_un"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No response (নিরুত্তর)"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Patient's contact no (যোগাযোগের নম্বর)"/>
+                        <EditText
+                            android:id="@+id/mob"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:maxLength="11"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Marital Status (বৈবাহিক অবস্থা)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/marrige"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/unm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Unmarried (অবিবাহিত)"/>
+                            <RadioButton
+                                android:id="@+id/mar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Married (বিবাহিত)"/>
+                            <RadioButton
+                                android:id="@+id/sep"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Seperated/divorced (পৃথক বা তালাকপ্রাপ্ত)"/>
+                            <RadioButton
+                                android:id="@+id/wid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Widow/widower (বিধবা বা বিপত্নীক)"/>
+                        </RadioGroup>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Educational qualification/শিক্ষাগত যোগ্যতা"
+                            android:layout_gravity="center_vertical"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <EditText
+                                android:id="@+id/edu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="2" />
+                            <RadioGroup
+                                android:id="@+id/edu_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RadioButton
+                                    android:id="@+id/edu_il"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="22dp"
+                                    android:text="No education/নিরক্ষর" />
+                                <RadioButton
+                                    android:id="@+id/edu_sig"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sign only/স্বাক্ষরজ্ঞান সম্পন্ন"/>
+                                <RadioButton
+                                    android:id="@+id/edu_oth"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Others/অন্যান্য"/>
+                            </RadioGroup>
+                            <EditText
+                                android:id="@+id/edu_oth_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Others" />
+                        </LinearLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Occupation (পেশা)"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <CheckBox
+                                android:id="@+id/student"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Student/ছাত্র"/>
+                            <CheckBox
+                                android:id="@+id/service"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Service/চাকুরীজীবি"/>
+                            <CheckBox
+                                android:id="@+id/business"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Business/ব্যাবসায়ী"/>
+                            <CheckBox
+                                android:id="@+id/farmer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Farmer/কৃষক"/>
+                            <CheckBox
+                                android:id="@+id/rickshaw"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Rickshaw puller/রিকশাচালক"/>
+                            <CheckBox
+                                android:id="@+id/driver"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Driver/ড্রাইভার"/>
+                            <CheckBox
+                                android:id="@+id/housewife"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Housewife/গৃহিণী"/>
+                            <CheckBox
+                                android:id="@+id/unemployed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Unemployed/বেকার"/>
+                            <CheckBox
+                                android:id="@+id/dgh"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Dairy farm worker/দুগ্ধ খামার কর্মী/Garments worker/গার্মেন্টস কর্মী/Hotel boy/হোটেল বয়"/>
+                            <CheckBox
+                                android:id="@+id/dl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Day labour/দিন মজুর"/>
+                            <CheckBox
+                                android:id="@+id/carpenter"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Carpenter/কাঠমিস্ত্রি"/>
+                            <CheckBox
+                                android:id="@+id/huckster"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Huckster/Peddler/ফেরিওয়ালা"/>
+                            <CheckBox
+                                android:id="@+id/ocu_oth"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Others/অন্যান্য"/>
+                            <EditText
+                                android:id="@+id/ocu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Monthly income (avg. last 3 months)/গড় মাসিক আয় (গত ৩ মাসে)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/income"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/lt10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="less than 10,000 (১০,০০০ এর কম)"/>
+                            <RadioButton
+                                android:id="@+id/lt20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10,000 to less than 20,000 (১0 থেকে ২০,০০০ এর কম)"/>
+                            <RadioButton
+                                android:id="@+id/lt30"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20,000 to less than 30,000 (২১ থেকে ৩০,০০০ এর কম)"/>
+                            <RadioButton
+                                android:id="@+id/gt30"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="equal or greater than 30,000 (৩০,০০০ এর বেশী বা সমান)"/>
+                        </RadioGroup>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Num. of child (ছেলেমেয়ের সংখ্যা)"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:id="@+id/child"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+                            <RadioButton
+                                android:id="@+id/child_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="yes/হ্যাঁ"/>
+                            <RadioButton
+                                android:id="@+id/child_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NO/না"/>
+                        </RadioGroup>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/child_num_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/child_num"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Num of child"
+                                android:inputType="number"
+                                android:maxLength="2"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:layout_marginBottom="2dp">
+                        <Button
+                            android:id="@+id/submit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="submit"
+                            android:layout_span="3"
+                            style="@style/Widget.AppCompat.Button.Colored" />
+                    </TableRow>
+                </TableLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
